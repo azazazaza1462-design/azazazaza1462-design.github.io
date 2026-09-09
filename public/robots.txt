@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://azazazaza1462-design.github.io/sitemap.xml
