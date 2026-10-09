@@ -16,6 +16,22 @@ export interface Project {
 }
 export const projects: Project[] = [
   {
+    id: "cotizaflow",
+    number: "04",
+    name: "CotizaFlow",
+    category: "SAAS / PRESUPUESTOS / IA APLICADA",
+    company: "Proyecto personal",
+    description: "De una idea a una propuesta profesional. Presupuestos con asistencia de IA, catálogo propio y revisión humana antes de generar el PDF.",
+    tags: [".NET 10", "React 19", "PostgreSQL", "OpenAI", "Docker"],
+    features: ["Borradores asistidos por IA", "Catálogo CSV / Excel", "Revisión humana y PDF"],
+    problem: "Preparar presupuestos requiere organizar productos y servicios, investigar referencias y calcular importes sin perder el control sobre los precios y el alcance.",
+    solution: "SaaS en español para gestionar clientes, catálogo y cotizaciones en MXN. Un asistente investiga referencias y prepara conceptos editables; la persona ajusta cantidades, impuestos y margen, guarda y revisa la propuesta antes de exportarla a PDF.",
+    contribution: "Desarrollo full-stack de CotizaFlow con asistencia de agentes de desarrollo: monolito modular, editor responsive, importación de catálogo, cálculo decimal en backend, historial de revisiones e integración de IA con validación de datos y fuentes.",
+    architecture: ["React / TypeScript → editor y catálogo", "ASP.NET Core → sesión y aislamiento por empresa", "Búsqueda web → extracción estructurada con IA", "Validación del backend → borrador editable", "EF Core / PostgreSQL → cálculos, snapshots e historial", "Revisión humana → PDFsharp / MigraDoc → PDF"],
+    technologies: ["C#", ".NET 10", "ASP.NET Core", "Entity Framework Core", "PostgreSQL 17", "Npgsql", "ASP.NET Core Identity", "React 19", "TypeScript", "Vite", "Tailwind CSS 4", "OpenAI Responses API", "Salidas estructuradas", "Búsqueda web", "PDFsharp / MigraDoc", "ClosedXML", "CsvHelper", "Docker Compose", "Playwright"],
+    results: ["Gestión de empresa, clientes, catálogo y cotizaciones con historial de revisiones.", "PDF corporativo con folio, totales y enlaces clicables; revisión humana obligatoria.", "Importaciones CSV/XLSX con vista previa y cálculos decimales validados en servidor.", "34 pruebas de backend y recorridos del asistente en escritorio y móvil documentados en el repositorio; respuestas de IA simuladas en E2E.", "Integración de búsqueda con OpenAI implementada; búsqueda real exitosa pendiente de verificación por saldo de API. Configuración Docker/Railway preparada, sin despliegue público verificado."],
+  },
+  {
     id: "identity",
     number: "01",
     name: "AI Document Analyzer",

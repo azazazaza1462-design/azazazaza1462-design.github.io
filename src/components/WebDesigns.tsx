@@ -10,6 +10,7 @@ import {
   AudioLines,
 } from "lucide-react";
 import { designs, type Design } from "../data/designs";
+import { moveCard, resetCard } from "../lib/motion";
 
 function DesignPreview({ design }: { design: Design }) {
   return (
@@ -112,16 +113,9 @@ function DesignPreview({ design }: { design: Design }) {
             </h4>
             <span className="forma-arrow">↗</span>
           </div>
-          <div className="architecture-art">
-            <div className="sun-disc" />
-            <div className="building-back" />
-            <div className="building-main">
-              <div className="arch-window" />
-              <div className="building-door" />
-            </div>
-            <div className="building-step" />
-            <div className="tree-shadow" />
-            <span>LIGHT. FORM. BALANCE.</span>
+          <div className="architecture-photo">
+            <img src={`${import.meta.env.BASE_URL}images/forma-architecture.jpg`} width="1400" height="933" alt="" loading="lazy" />
+            <div className="photo-project-label"><span>01 / SELECTED SPACES</span><strong>Light. Form. Perspective.</strong><span>View project ↗</span></div>
           </div>
           <div className="forma-bottom">
             <span>
@@ -163,11 +157,10 @@ function DesignPreview({ design }: { design: Design }) {
                 <i /> Choose your tone
               </span>
             </div>
-            <div className="headphones">
-              <div className="headband" />
-              <div className="headphone-cup cup-left" />
-              <div className="headphone-cup cup-right" />
-              <span>01 / STUDIO SERIES</span>
+            <div className="product-photo">
+              <img src={`${import.meta.env.BASE_URL}images/aural-headphones.jpg`} width="1200" height="805" alt="" loading="lazy" />
+              <span className="product-photo-label">THE LISTENING EDIT / 01</span>
+              <div className="product-photo-specs"><span>Over-ear</span><span>Wireless</span><span>Everyday essentials</span></div>
             </div>
           </div>
           <div className="aural-bottom">
@@ -208,9 +201,9 @@ export default function WebDesigns() {
           </h2>
         </div>
         <p>
-          Tres direcciones de diseño web.
+          Diseño que se puede explorar.
           <br />
-          Identidades distintas. La misma atención al detalle.
+          Producto, arquitectura y comercio digital.
         </p>
       </div>
       <p className="design-disclosure">
@@ -219,7 +212,7 @@ export default function WebDesigns() {
       </p>
       <div className="design-gallery">
         {designs.map((design) => (
-          <article className="design-card" key={design.id}>
+          <article className="design-card interactive-card" key={design.id} onPointerMove={moveCard} onPointerLeave={resetCard}>
             <button
               className="design-open"
               aria-label={`Ver diseño ${design.name}`}
@@ -250,6 +243,7 @@ export default function WebDesigns() {
           </article>
         ))}
       </div>
+      <small className="photo-credit">Fotografía de referencia: <a href="https://unsplash.com" target="_blank" rel="noreferrer">Unsplash</a> · Interfaces implementadas en React y CSS.</small>
       <dialog
         className="design-dialog"
         ref={dialog}

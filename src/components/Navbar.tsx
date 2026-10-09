@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X, Code2 } from "lucide-react";
 const links = [
   ["proyectos", "Proyectos"],
-  ["diseno-web", "Dise?o web"],
+  ["diseno-web", "Diseño web"],
   ["experiencia", "Experiencia"],
   ["stack", "Stack"],
   ["sobre-mi", "Sobre mí"],
 ];
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("inicio");
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => { if (entry.isIntersecting) setActive(entry.target.id); });
+    }, { rootMargin: "-15% 0px -65% 0px" });
+    document.querySelectorAll("main section[id]").forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
   return (
     <header className="site-header">
       <a href="#inicio" className="logo" aria-label="José Ramos, inicio">
@@ -33,7 +41,7 @@ export default function Navbar() {
         aria-label="Navegación principal"
       >
         {links.map(([id, label]) => (
-          <a key={id} href={`#${id}`} onClick={() => setOpen(false)}>
+          <a key={id} href={`#${id}`} aria-current={active === id ? "location" : undefined} onClick={() => setOpen(false)}>
             {label}
           </a>
         ))}

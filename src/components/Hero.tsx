@@ -6,6 +6,7 @@ import {
   Cloud,
   Globe2,
 } from "lucide-react";
+import DevelopmentFlow from "./DevelopmentFlow";
 export default function Hero() {
   return (
     <section id="inicio" className="hero">
@@ -14,13 +15,12 @@ export default function Hero() {
           <span /> Disponible para nuevas oportunidades
         </div>
         <p className="hero-name">JOSÉ ADOLFO RAMOS CARMONA</p>
+        <p className="hero-role">SOFTWARE ENGINEER / FULL-STACK & APPLIED AI</p>
         <h1>
-          Software Engineer<span className="accent">.</span>
+          Construyo ideas.<br /><span className="hero-gradient">Entrego software.</span>
         </h1>
         <h2>
-          Ideas claras.
-          <br />
-          Software que <span>hace la diferencia.</span>
+          Del primer concepto <span>a una solución real.</span>
         </h2>
         <p className="hero-description">
           Construyo software que conecta negocio, datos e inteligencia
@@ -39,74 +39,14 @@ export default function Hero() {
           <MapPin size={14} /> Boca del Río, Veracruz, México
         </div>
       </div>
-      <div className="hero-art">
-        <div className="orbit orbit-one" />
-        <div className="orbit orbit-two" />
-        <div className="code-window">
-          <div className="window-bar">
-            <div className="window-dots">
-              <i />
-              <i />
-              <i />
-            </div>
-            <span>SoftwareEngineer.cs</span>
-            <Code2 size={15} />
-          </div>
-          <div className="code-content">
-            <div className="code-line">
-              <span className="comment">
-                // Turning real problems into software.
-              </span>
-            </div>
-            <div className="code-line">
-              <span className="purple">public sealed class</span>{" "}
-              <span className="mint">SoftwareEngineer</span>
-            </div>
-            <div className="code-line">{"{"}</div>
-            <div className="code-line">
-              {"    "}
-              <span className="purple">public string</span> Name{" "}
-              <span className="purple">=&gt;</span>
-            </div>
-            <div className="code-line">
-              {"        "}
-              <span className="sand">"José Adolfo Ramos Carmona"</span>;
-            </div>
-            <div className="code-line"> </div>
-            <div className="code-line">
-              {"    "}
-              <span className="purple">public string[]</span> Stack{" "}
-              <span className="purple">=&gt;</span>
-            </div>
-            <div className="code-line">{"    ["}</div>
-            {[".NET 10", "React", "PostgreSQL", "Azure", "Claude"].map(
-              (x, i) => (
-                <div className="code-line" key={x}>
-                  {"        "}
-                  <span className="sand">"{x}"</span>
-                  {i < 4 ? "," : ""}
-                </div>
-              ),
-            )}
-            <div className="code-line">{"    ];"}</div>
-            <div className="code-line">{"}"}</div>
-          </div>
-          <div className="code-status">
-            <span>
-              <span className="status-dot" /> Ready to build
-            </span>
-            <span>C# · UTF-8</span>
-          </div>
-        </div>
-        <div className="floating-label">
-          <span className="floating-icon">
-            <Code2 size={18} />
-          </span>
-          <div>
-            Built with purpose.<small>Engineered to scale.</small>
-          </div>
+      <div className="hero-art technology-stage" aria-label="Globo animado con tecnologías de backend, frontend, datos, cloud e inteligencia artificial">
+        <div className="world-stage-heading"><span className="world-live-dot" /> TECHNOLOGY UNIVERSE <span>3D / LIVE</span></div>
+        <div className="world-stage-footer">
+          <div><span className="world-orbit-symbol">◎</span><div>Mi mundo, en código.<small>Backend · Frontend · Cloud · AI</small></div></div>
+          <p><span>❯</span> imagine → build → ship<span className="code-cursor" aria-hidden="true">▍</span></p>
         </div>
       </div>
+      <DevelopmentFlow />
       <div className="hero-facts">
         <div>
           <Code2 />

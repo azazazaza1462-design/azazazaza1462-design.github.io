@@ -1,16 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600;650;700;750;800&display=swap");
 :root {
   font-family: "DM Sans", sans-serif;
-  color: #edf1ed;
-  background: #091210;
+  color: #edf2fa;
+  background: #080e1b;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  --bg: #091210;
-  --panel: #101b17;
-  --line: #25312b;
-  --muted: #9ca9a1;
-  --accent: #b8f3ca;
+  --bg: #080e1b;
+  --panel: #111c30;
+  --line: #25334c;
+  --muted: #a4b1c6;
+  --accent: #77d5ff;
 }
 * {
   box-sizing: border-box;
@@ -2650,4 +2650,117 @@ footer p {
   .site-header nav {
     gap: 0;
   }
+}
+
+/* Navy / cyan direction inspired by BootstrapMade Workfolio. */
+body {
+  background: radial-gradient(ellipse at 85% 8%, #16355755, transparent 30%), var(--bg);
+}
+::selection { background: var(--accent); color: #080e1b; }
+.site-header { height: 88px; }
+nav { color: #b9c5d8; }
+.nav-contact, .secondary { border-color: #364b68; }
+.hero { padding-top: 84px; }
+.hero .availability { background: #102b39; border-color: #244958; color: #b5e6f9; border-radius: 30px; }
+.hero h1 { font-size: clamp(36px, 4.3vw, 62px); font-weight: 800; }
+.hero h2 { color: #bbc7da; }
+.hero-description { font-size: 15px; }
+.primary { color: #071827; }
+.primary:hover { background: #ade7ff; }
+.secondary:hover { background: #15253c; }
+.hero-art:before { background: radial-gradient(ellipse, #399bdd30, transparent 65%); }
+.code-window { background: #101b2d; border-color: #344a69; transform: rotate(2deg); animation: editor-float 7s ease-in-out infinite; }
+.window-bar, .code-status { border-color: #293b54; color: #a3b6ce; }
+.window-bar { background: #19283e; }
+.code-content { color: #c3d0e1; }
+.code-line:before { color: #667d9b; }
+.comment { color: #8298b5; }
+.mint { color: #77d5ff; }
+.floating-label { background: #182b42ee; border-color: #385672; }
+.floating-label small, .hero-location, .hero-facts span { color: #9eb0c9; }
+.orbit { border-color: #3782b855; }
+.hero-facts { margin-top: 28px; }
+.hero-facts svg, .stack-ribbon .ribbon-ai { color: #89c9ec; }
+.stack-ribbon { color: #becce0; }
+.stack-ribbon > span { color: #95a7c1; }
+.project-card, .skill-card, .project-modal, .design-dialog { background: #101b2d; }
+.company { background: linear-gradient(130deg, #19345255, transparent); }
+.company-mark { background: #1d3551; }
+.education { background: radial-gradient(ellipse at top right, #25648b33, transparent 70%), #101b2d; }
+.contact-section { background: radial-gradient(ellipse at top right, #25648b44, transparent 65%), #101b2d; }
+.project-card { border-radius: 16px; box-shadow: 0 16px 45px #0002; }
+.project-card:hover { border-color: #568cac; transform: translateY(-5px); }
+.project-content > p { font-size: 14px; }
+.project-meta { color: #91c8e5; font-size: 9px; line-height: 1.6; }
+.project-features li { font-size: 11px; color: #c0cce0; }
+.project-features svg { color: var(--accent); }
+.tags > span { color: #bacde4; background: #15243a; border-color: #2c405d; border-radius: 6px; font-size: 10px; }
+.project-visual, .featured .project-visual { background: radial-gradient(ellipse at center, #24638b44, transparent 75%), #0e2035; }
+.project-modal { border-color: #3a5273; }
+.design-strip { background: #111f32; border-color: var(--line); }
+.design-dialog-toolbar { background: #101b2df5; }
+.project-filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 24px; }
+.project-filters button { padding: 10px 18px; border: 1px solid var(--line); border-radius: 30px; font-size: 12px; color: #b7c8de; transition: background .2s, border-color .2s; }
+.project-filters button:hover { border-color: var(--accent); }
+.project-filters button[aria-pressed="true"] { color: #081827; background: var(--accent); border-color: var(--accent); }
+.project-filters > span { margin-left: auto; font-size: 11px; color: var(--muted); }
+.development-flow { position: relative; margin-top: 65px; padding: 24px; border: 1px solid #2d4261; border-radius: 14px; background: linear-gradient(120deg, #13233b, #0c1728); overflow: hidden; }
+.flow-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 24px; }
+.flow-heading .eyebrow { margin: 0; font-size: 9px; }
+.flow-indicator { color: #89c9ec; font: 10px Consolas, monospace; }
+.flow-stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.flow-stage { display: flex; align-items: center; gap: 12px; padding: 12px; border: 1px solid transparent; border-radius: 9px; animation: stage-active 6s ease-in-out infinite; }
+.flow-icon { display: flex; padding: 10px; color: var(--accent); background: #77d5ff12; border-radius: 10px; }
+.flow-stage strong { display: block; font-size: 13px; }
+.flow-stage small { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; line-height: 1.5; }
+.flow-number { margin-left: auto; color: #718aa9; font: 10px Consolas, monospace; }
+.flow-track { height: 2px; margin-top: 20px; background: #253b56; overflow: hidden; }
+.flow-track span { display: block; height: 100%; width: 25%; background: linear-gradient(90deg, transparent, #77d5ff); animation: pipeline-travel 6s linear infinite; }
+.code-cursor { color: var(--accent); animation: cursor-blink 1.2s steps(2, start) infinite; }
+.quote-preview { position: relative; width: 82%; max-width: 360px; padding: 21px 0 32px; }
+.quote-brand { display: flex; gap: 8px; align-items: center; font-weight: 700; font-size: 16px; color: #dcecff; }
+.quote-brand > span { margin-left: auto; font: 7px Consolas, monospace; color: #8cabca; }
+.quote-assistant { display: flex; gap: 12px; align-items: center; padding: 15px; margin: 18px 0 12px; background: #234767; border: 1px solid #427da4; border-radius: 10px; color: #97daff; font-size: 11px; }
+.quote-assistant strong { display: block; color: #e8f4ff; font-size: 14px; margin-top: 3px; }
+.quote-assistant > svg:last-child { margin-left: auto; }
+.quote-sheet { padding: 20px; background: #edf4fa; color: #172d47; border-radius: 9px; box-shadow: 0 14px 30px #0003; transform: rotate(-2deg); }
+.quote-sheet > small { font-size: 8px; letter-spacing: 1.4px; color: #526e89; }
+.quote-sheet h4 { margin: 8px 0 14px; font-size: 17px; }
+.quote-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 0; border-bottom: 1px solid #cfdae5; font-size: 10px; }
+.quote-row i { height: 5px; width: 42px; background: #b1c3d5; border-radius: 3px; }
+.quote-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; font-size: 9px; }
+.quote-footer > span { display: flex; align-items: center; gap: 5px; }
+.quote-footer b { padding: 7px 12px; border-radius: 4px; background: #173b5b; color: #fff; }
+@keyframes editor-float { 0%,100% { transform: translateY(0) rotate(2deg); } 50% { transform: translateY(-9px) rotate(1deg); } }
+@keyframes stage-active { 0%,24% { border-color: #77d5ff66; background: #77d5ff0b; } 25%,100% { border-color: transparent; background: transparent; } }
+@keyframes pipeline-travel { from { transform: translateX(-100%); } to { transform: translateX(400%); } }
+@keyframes cursor-blink { to { opacity: 0; } }
+@media (max-width: 1100px) {
+  .flow-stages { gap: 5px; }
+  .flow-stage { padding: 8px 4px; gap: 8px; }
+  .flow-number { display: none; }
+  .hero h1 { font-size: 44px; }
+}
+@media (max-width: 760px) {
+  .site-header { height: 76px; }
+  .site-header nav { background: #111c30; border-color: #344967; }
+  .hero { padding-top: 43px; }
+  .hero h1 { font-size: clamp(34px, 8vw, 48px); }
+  .development-flow { margin-top: 55px; padding: 18px; }
+  .flow-stages { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .flow-heading { align-items: flex-start; flex-direction: column; }
+  .flow-stage { padding: 8px 4px; }
+  .flow-icon { padding: 8px; }
+  .flow-stage small { font-size: 9px; }
+  .project-filters { gap: 7px; }
+  .project-filters button { font-size: 11px; padding: 9px 12px; }
+  .project-filters > span { width: 100%; margin-top: 6px; }
+  .featured .visual-cotizaflow { height: 370px; }
+  .project-meta { font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .code-window, .flow-stage, .flow-track span, .code-cursor { animation: none; }
+  .code-window { transform: none; }
+  .flow-stage { border-color: #2d4261; }
+  .flow-track span { width: 100%; }
 }

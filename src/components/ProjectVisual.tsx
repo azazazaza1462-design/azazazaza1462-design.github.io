@@ -12,7 +12,21 @@ export default function ProjectVisual({ type }: { type: string }) {
   return (
     <div className={`project-visual visual-${type}`} aria-hidden="true">
       <div className="visual-grid" />
-      {type === "identity" ? (
+      {type === "cotizaflow" ? (
+        <>
+          <div className="quote-preview">
+            <div className="quote-brand"><FileText size={19} /> CotizaFlow <span>CONCEPTO UI</span></div>
+            <div className="quote-assistant"><Network size={18} /><div>Describe el trabajo.<strong>Dale forma con IA.</strong></div><Check size={16} /></div>
+            <div className="quote-sheet">
+              <small>PROPUESTA COMERCIAL</small>
+              <h4>Tu próximo proyecto</h4>
+              {["Productos y materiales", "Servicios y alcance", "Impuestos y margen"].map((item) => <div className="quote-row" key={item}><span>{item}</span><i /></div>)}
+              <div className="quote-footer"><span><Check size={13} /> Revisión humana</span><b>PDF ↗</b></div>
+            </div>
+          </div>
+          <span className="visual-caption">IDEA → BORRADOR → REVISIÓN → PROPUESTA</span>
+        </>
+      ) : type === "identity" ? (
         <>
           <div className="document">
             <div className="document-top">

@@ -13,18 +13,18 @@ export const designs = [
     name: "Forma — Architecture Studio",
     category: "EDITORIAL & CORPORATE",
     description:
-      "Dirección editorial, tonos cálidos y arquitectura geométrica para una presencia de marca sofisticada.",
+      "Una web editorial con fotografía arquitectónica, tipografía elegante y espacio para que cada proyecto destaque.",
     details:
-      "Un concepto para un estudio de arquitectura: tipografía editorial, navegación discreta y una composición visual que da espacio a los proyectos. La ilustración arquitectónica está construida en CSS.",
+      "Un concepto para un estudio de arquitectura: fotografía de referencia de Unsplash, tipografía editorial y navegación discreta. La interfaz se construye con HTML y CSS y se adapta a escritorio y móvil. La fotografía ilustra la dirección visual; no es un proyecto del estudio ficticio.",
   },
   {
     id: "commerce",
     name: "Aural — Digital Commerce",
     category: "E-COMMERCE & BRAND",
     description:
-      "Una experiencia de producto con contraste, formas tridimensionales y una identidad visual contundente.",
+      "Fotografía de producto, una composición limpia y detalles de colección para una experiencia de compra con identidad.",
     details:
-      "Concepto de comercio digital centrado en producto, con una ilustración original de audífonos, detalles de colección y una composición adaptable. Es una propuesta visual; no incluye carrito ni pagos.",
+      "Concepto de comercio digital con fotografía de audífonos de Unsplash, detalles de colección y una composición adaptable. La imagen es una referencia visual para la marca ficticia Aural. Es una propuesta de interfaz; no incluye carrito ni pagos.",
   },
 ] as const;
 export type Design = (typeof designs)[number];

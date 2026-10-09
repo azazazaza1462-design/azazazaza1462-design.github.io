@@ -1,6 +1,7 @@
 import { ArrowUpRight, Check } from "lucide-react";
 import type { Project } from "../data/projects";
 import ProjectVisual from "./ProjectVisual";
+import { moveCard, resetCard } from "../lib/motion";
 export default function ProjectCard({
   project,
   onOpen,
@@ -10,14 +11,18 @@ export default function ProjectCard({
 }) {
   return (
     <article
-      className={`project-card ${project.id === "identity" ? "featured" : ""}`}
+      className={`project-card interactive-card ${project.id === "identity" || project.id === "cotizaflow" ? "featured" : ""}`}
+      onPointerMove={moveCard}
+      onPointerLeave={resetCard}
     >
       <ProjectVisual type={project.id} />
       <div className="project-content">
         <div className="project-meta">
           <span>
             {project.number} /{" "}
-            {project.id === "identity"
+            {project.id === "cotizaflow"
+              ? "NUEVO / SAAS & IA APLICADA"
+              : project.id === "identity"
               ? "PROYECTO DESTACADO"
               : project.id === "metrics"
                 ? "ANALYTICS & FULL-STACK"

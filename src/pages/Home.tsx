@@ -11,6 +11,8 @@ import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import type { Project } from "../data/projects";
+import ScrollProgress from "../components/ScrollProgress";
+import TechnologyWorld from "../components/TechnologyWorld";
 export default function Home() {
   const [project, setProject] = useState<Project | null>(null);
   useEffect(() => {
@@ -29,14 +31,20 @@ export default function Home() {
         }),
       { threshold: 0.04 },
     );
-    document.querySelectorAll(".section").forEach((el) => {
+    document.querySelectorAll(".section-heading, .design-disclosure, .design-strip, .project-filters, .project-card, .design-card, .skill-card, .cert-grid article, .experience-grid article, .about-section > div, .contact-section").forEach((el, index) => {
       el.classList.add("reveal");
+      (el as HTMLElement).style.setProperty("--reveal-delay", `${(index % 3) * 80}ms`);
       observer.observe(el);
     });
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      document.querySelectorAll(".reveal").forEach((el) => el.classList.remove("reveal"));
+    };
   }, []);
   return (
     <>
+      <TechnologyWorld />
+      <ScrollProgress />
       <a className="skip-link" href="#contenido">
         Saltar al contenido
       </a>

@@ -1,6 +1,10 @@
 # José Adolfo Ramos Carmona — Portfolio
 
-Portafolio profesional de Software Engineer, enfocado en backend .NET, full-stack, cloud e integración de IA. Diseño oscuro responsive con visuales SVG/CSS originales, tres casos de estudio y contenido separado de los componentes.
+Portafolio profesional de Software Engineer, enfocado en backend .NET, full-stack, cloud e integración de IA. Diseño oscuro responsive con visuales SVG/CSS originales, cuatro casos de estudio y contenido separado de los componentes.
+
+Rediseño con paleta navy/cian inspirado en [Workfolio de BootstrapMade](https://bootstrapmade.com/bootstrap-portfolio-templates/), implementado con los componentes React propios. Incluye filtros de proyectos y un flujo animado de código, build, pruebas y entrega que respeta `prefers-reduced-motion`.
+
+CotizaFlow se agregó a partir de la documentación y dependencias del repositorio local `presu_ode`, conservando los tres proyectos anteriores. Su visual es conceptual. El caso distingue la integración de IA implementada de la búsqueda real todavía pendiente de verificación, y no afirma un despliegue público.
 
 ## Tecnologías
 
@@ -42,7 +46,15 @@ Los casos de estudio usan `dialog` nativo, cierre con Escape, foco contenido y r
 
 ## Design Lab
 
-Tres conceptos originales de interfaces web (SaaS, arquitectura y e-commerce) implementados en CSS/SVG. Son marcas ficticias y propuestas visuales, no proyectos de clientes. Cada concepto se puede ampliar en un di?logo y alternar entre composici?n de escritorio y m?vil. Contenido en `src/data/designs.ts`; presentaci?n en `src/components/WebDesigns.tsx`.
+Tres conceptos originales de interfaces web (SaaS, arquitectura y e-commerce) implementados en React/CSS. Forma y Aural usan fotografías de referencia almacenadas en `public/images/`, con procedencia documentada en esa carpeta. Son marcas ficticias y propuestas visuales, no proyectos de clientes. Cada concepto se puede ampliar en un diálogo y alternar entre composición de escritorio y móvil. Contenido en `src/data/designs.ts`; presentación en `src/components/WebDesigns.tsx`.
+
+La galería combina una preview de Orbit de mayor tamaño con dos composiciones fotográficas. `src/styles/enhancements.css` contiene la dirección editorial y las animaciones: entradas escalonadas, terminal, órbitas, escaneo de documentos, gráfica, tarjetas sensibles al puntero y apertura de diálogos. La navegación fija indica la sección actual y una barra muestra el progreso de lectura. Las animaciones respetan movimiento reducido.
+
+El fondo incluye un mundo tecnológico en Canvas 2D con proyección 3D: esfera rotatoria, continentes punteados ilustrativos, etiquetas derivadas del stack, anillos orbitales y partículas. Aparece de forma protagonista en el inicio y continúa como fondo al desplazarse. No requiere librerías 3D ni assets externos. Se limita a 30 FPS, pausa al ocultar la pestaña y se muestra estático con movimiento reducido. Implementación en `src/components/TechnologyWorld.tsx` y `src/styles/technology-world.css`.
+
+Globo verificado en Chrome a 390, 768 y 1366 px: renderizado y movimiento de Canvas, más de 50 tecnologías, fondo al hacer scroll, ausencia de desbordamiento, interacción con proyectos y respuesta a cambios de la preferencia de movimiento reducido. Build de producción correcto. Capturas en `artifacts/world-*.png`.
+
+La sección de contacto presenta una composición de dos columnas, canales de contacto directos, copiar correo con confirmación y alternativa ante errores, tarjetas de LinkedIn/GitHub y un diagrama animado de idea → conversación → solución. Incluye fondo luminoso, anillos de señal y un borde de luz animado, con movimiento reducido. Verificada en Chrome a 360, 390, 768 y 1366 px: disposición, enlaces, copia real al portapapeles, fallo de copia y animaciones; sin errores JavaScript. Build y `git diff --check` correctos. Capturas en `artifacts/contact-390.png` y `artifacts/contact-1366.png`.
 
 ## Deployment
 
@@ -65,6 +77,8 @@ Revisar el resultado en Actions ? Deploy portfolio to GitHub Pages. No se requie
 
 ## Comprobaciones recomendadas
 
+Rediseño del 2026-10-09: `npm.cmd run build` completó TypeScript y Vite correctamente; `git diff --check` pasó. Revisión automatizada con Playwright y Chrome a 360, 390, 768, 1366 y 1920 px: sin desbordamiento horizontal, carga de ambas fotografías, filtros de proyectos, apertura y cierre de los cuatro casos con restauración de foco, los tres diseños en escritorio/móvil, navegación móvil y progreso de lectura. Movimiento reducido verificado y sin errores JavaScript. Capturas del rediseño en `artifacts/redesign-*.png`. Las comprobaciones siguientes corresponden a la versión anterior.
+
 Validación realizada: build de producción y revisión automatizada en Chrome a 360, 390, 768, 1366 y 1920 px, sin desbordamiento horizontal. Se comprobó apertura y cierre con Escape de los tres casos de estudio, restauración del foco, navegación móvil y ausencia de errores JavaScript. Capturas locales disponibles en `artifacts/` (no incluidas en el despliegue).
 
-Ejecutar `npm run build`, navegar con teclado, abrir/cerrar los tres casos de estudio y revisar a 360, 390, 768, 1366 y 1920 px. Lighthouse debe ejecutarse contra una build de producción; no se afirma una puntuación sin medirla.
+Ejecutar `npm run build`, navegar con teclado, probar los filtros, abrir/cerrar los cuatro casos de estudio y revisar a 360, 390, 768, 1366 y 1920 px. Lighthouse debe ejecutarse contra una build de producción; no se afirma una puntuación sin medirla.
